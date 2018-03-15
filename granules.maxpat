@@ -5,11 +5,11 @@
 			"major" : 7,
 			"minor" : 3,
 			"revision" : 5,
-			"architecture" : "x64",
+			"architecture" : "x86",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 79.0, 652.0, 787.0 ],
+		"rect" : [ 122.0, 79.0, 889.0, 927.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,50 +40,51 @@
 				"box" : 				{
 					"data" : 					{
 						"clips" : [ 							{
-								"filename" : "Tobolsk:/Users/nathankoch/Developer/granules-sound-studies/media/SR002MS.WAV",
+								"filename" : "Kolyma:/Users/nathankoch/Developer/granules-for-sound-studies/media/SR002MS.WAV",
 								"filekind" : "audiofile",
 								"loop" : 0,
 								"content_state" : 								{
+									"originallengthms" : [ 0.0 ],
+									"originaltempo" : [ 120.0 ],
 									"slurtime" : [ 0.0 ],
-									"pitchcorrection" : [ 0 ],
-									"formantcorrection" : [ 0 ],
 									"mode" : [ "basic" ],
+									"pitchcorrection" : [ 0 ],
+									"followglobaltempo" : [ 0 ],
+									"formant" : [ 1.0 ],
 									"basictuning" : [ 440 ],
 									"originallength" : [ 0.0, "ticks" ],
-									"originaltempo" : [ 120.0 ],
 									"timestretch" : [ 0 ],
 									"play" : [ 0 ],
+									"speed" : [ 1.0 ],
 									"quality" : [ "basic" ],
-									"formant" : [ 1.0 ],
-									"pitchshift" : [ 1.0 ],
-									"followglobaltempo" : [ 0 ],
-									"originallengthms" : [ 0.0 ],
-									"speed" : [ 1.0 ]
+									"formantcorrection" : [ 0 ],
+									"pitchshift" : [ 1.0 ]
 								}
 
 							}
  ]
 					}
 ,
-					"id" : "obj-3",
+					"id" : "obj-5",
 					"maxclass" : "playlist~",
 					"numinlets" : 1,
 					"numoutlets" : 5,
 					"outlettype" : [ "signal", "signal", "signal", "", "dictionary" ],
-					"patching_rect" : [ 82.0, 347.0, 150.0, 30.0 ],
+					"patching_rect" : [ 109.0, 344.0, 150.0, 30.0 ],
 					"style" : ""
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-21",
-					"maxclass" : "comment",
+					"id" : "obj-9",
+					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 142.800003, 229.600006, 68.400002, 20.0 ],
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 319.0, 24.0, 79.0, 22.0 ],
 					"style" : "",
-					"text" : "Oscillator"
+					"text" : "loadmess 20"
 				}
 
 			}
@@ -94,32 +95,6 @@
 					"numinlets" : 2,
 					"numoutlets" : 0,
 					"patching_rect" : [ 218.5, 524.800049, 45.0, 45.0 ],
-					"style" : ""
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-18",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 152.0, 303.399994, 45.0, 22.0 ],
-					"style" : "",
-					"text" : "cycle~"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-17",
-					"maxclass" : "number",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 152.0, 257.399994, 50.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -171,7 +146,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 319.0, 38.799999, 150.0, 20.0 ],
+					"patching_rect" : [ 385.0, 65.0, 150.0, 20.0 ],
 					"style" : "",
 					"text" : "Grain duration in ms"
 				}
@@ -260,22 +235,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-18", 0 ],
-					"source" : [ "obj-17", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-4", 0 ],
 					"source" : [ "obj-2", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-15", 0 ],
-					"source" : [ "obj-3", 0 ]
 				}
 
 			}
@@ -288,15 +249,29 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-15", 0 ],
+					"source" : [ "obj-5", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-13", 0 ],
 					"source" : [ "obj-6", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-9", 0 ]
 				}
 
 			}
  ],
 		"dependency_cache" : [ 			{
 				"name" : "SR002MS.WAV",
-				"bootpath" : "~/Developer/granules-sound-studies/media",
+				"bootpath" : "~/Developer/granules-for-sound-studies/media",
 				"patcherrelativepath" : "./media",
 				"type" : "WAVE",
 				"implicit" : 1
